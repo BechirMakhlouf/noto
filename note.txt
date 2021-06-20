@@ -306,3 +306,14 @@ const multiplyThreeNums = function (num1, num2, num3) {
 }
 
 const multiplyBy6 = multiplyThreeNums.bind(null, 2, 3);
+
+
+**IIFE (Immediately Invoked Function Expression):
+
+Those are functions that are used one time then can never be used or accessed again.
+
+EXAMPLE:
+
+( function() {
+    console.log('this function will not be run again');
+} )
