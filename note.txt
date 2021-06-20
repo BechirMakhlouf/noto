@@ -1,0 +1,308 @@
+-------------------------------------------------------------JAVASCRIPT NOTES:---------------------------------------------------------------------
+
+
+`yooo wtf ${variableName} dude check this out ${operation or any javascript code} lol.`; <--- Template literals (``)
+    the inside of a template literal need to be an expression not a statement.
+
+if () {
+
+} else if () {
+
+} else {
+
+}
+
+Number() --> convert to a number.
+String() --> convert to a string.
+Boolean() --> conver to a boolean.
+prompt(message) request input and returns a string.
+NaN --> not a number (an operation with number has failed or something like that).
+
+!  --> not
+&& --> and
+|| --> or
+=== -> strict equal
+!== -> not equal
+!=== -> strict not equal
+TRUTHY VS FALSEY!!!
+
+switch (variable) {
+    case 'case1':
+    ....
+    break;
+    case 'case2':
+    ...
+    break;
+    case 'case3':
+    ...
+    break;
+    case 'case4':
+    case 'case5':
+    ....
+    break;
+    default:
+    ....
+}
+
+expression --> does produce or is a value.
+statement --> action for the program to execute.
+
+condition ? ifStatement: elseStatement; <-- Ternary Operator!! it is an expression so that means it can be used on template literals and when declaring variables or in any place that expects a value.
+
+'use strict'; --> to write more secure javascript code.
+
+**FUNCTIONS:
+function functionName(parameter1, parameter2,..) {
+    blocs of code...
+    ...
+    ...                                                       <--- DECLARING A FUNCTION
+    ...
+
+    return value;
+}
+functionName(argument1, argument2);                           <--- calling a function.
+
+let functionName = function(parameters) {
+    ...                                                       <--- DECLARING A FUNCTION EXPRESSION
+    ...
+    return value;
+}
+
+let functionName = (paramater1, parameter2) => returnedValue; <--- DECLARING AN ARROW FUNCTION (the same as a function expression but shorter therefore faster to write) 
+or
+let functionName = (parameter1, parameter2) => {
+    ....
+    ....                                                      <--- Arrow function longhand. (it doesn't have its own 'this' keyword and does have .                                                                               other differences compared to a regular function expression.)
+
+    return value;
+}
+
+let arrayName = [value1, value2, value3, ....];  <-- Array declaration.
+let arrayName = new array(value1, value2, value3); <-- another array declaration.
+* arrays are objects and have methods (built in ones)
+
+**ARRAY METHODS:
+
+arrayName.push(value)     --> adds a new value at the end of the array and RETURNS the new length of the array.
+arrayName.unshift(value)  --> adds a new value at the start of the array and RETURNS the new length of the array.
+arrayName.pop()           --> removes the last item of the array and RETURNS the deleted item.
+arrayName.shift()         --> removes the first items of the array and RETURNS the deleted item.
+arrayName.indexof(value)  --> returns the index of the value if it exists in the array if not it returns -1.
+arrayName.includes(value) --> returns a boolean if whether the value exists or not.
+
+**OBJECTS:
+
+let objectName = {
+Properties--> key1: value1,
+           -> key2: value2,                  <-- Object Literal Syntax.
+              key3: value3,
+    ...
+
+              methodName: function (properties) {   <-- Decalring a method.
+                  this.key1                <-- refers USUALLY the property named key1 of this object
+                  return value;
+              }
+    
+};
+objectName.key1                                <-- to retrieve data for the object .
+objectName['key1']                             <-- we can type expressions between the brackets.
+
+objectName.newKey = newValue;                  <-- add new value to objectName.
+objectName['newkey'] = newValue;               <-- add new value to objectName.
+
+objectName.methodName();                       <-- call a method
+objectName['methodName']();                    <-- call a method
+this                                           <-- refers to the wanted property of the mother object itself.
+
+
+**LOOPS:
+
+for (intial expression; condition; increment expression) {
+    statements...
+    ..
+    ..
+    ..
+}
+
+while (condition) {
+    statement...
+    ..
+    ..
+    ..
+}
+
+break <-- to cancel the loop and jump to the next code.
+continue <-- to jump to the next iteration of the loop.
+
+i++ <- increment.
+i-- <- decrement.
+
+**DOM MANIPULATION = Document Object Model Manipulation:
+
+console.dir(objectName)  <- to know what the properties and methods of an object
+
+https://fundamentals.generalassemb.ly/11_unit/dom-cheatsheet.html
+https://www.javascripttutorial.net/javascript-dom/
+
+**ARRAY DESTRUCTURING:
+
+const [variable1, variable2, variable3] = [15, 32, '34', 'bechir'];
+------->    variable1 = 15
+            variable2 = 32
+            variable3 = '34';
+
+
+const [variable1, , , variable2] = [15, 32, '34', 'bechir']; 
+------->    variable1 = 15;
+            variable2 = 'bechir';
+
+[firstItem, secondItem] = [secondItem, firstItem]; <--- trick to switch variable places inside an array. (Mutating variables. it actually means changing variable values and not strictly switching values.)
+
+const [variable1, [variable2, variabl3]] = [15, 32, '34', 'bechir']; <--- Destructure a nested array.
+
+**OBJECT DESTRUCTURING:
+
+const obj = {
+    key1: value1;
+    key2: value2;
+    key3: value3;
+
+    function1: function () {
+        ...
+        ...
+    }
+}
+const {key1: variable1 = defaultValue,
+       key2: variable2 = defaultValue,
+       notAvailableProperty: variable3 = defaultValue,
+    } = obj
+
+------->    variable1 = value1
+            variable2 = value2;
+            variable3 = DefaultValue;
+
+Mutating variables:
+
+let a = 15,
+    b = 345;
+
+({a, b} = obj);
+
+**SPREAD OPERATOR:
+
+... <--- spread and rest operator (spread array works on all iterables and objects)
+
+Iterables: arrays, strings, sets, maps and NOT Objects. (iterables = you can loop through them.)
+You can spread strings, arrays and other iterables for ex:
+const ch = 'Bechir'
+...ch ----> 'B', 'e', 'c', 'h', 'i', 'r'  <-- and we can and usually add this to an array or pass this as an argument for a function.
+
+it is  SPREAD when we expect a value, and it's REST when we expect variables. 
+
+const starterMenu = ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'];
+
+const newStarterMenu = [...starterMenu, 'Pizza', 'cheeseCake'];
+
+**MORE ON || AND && OPERATORS:
+
+Both opertors clould be useds with any datatypes and return any datatype
+
+|| returns the first true or truthy value or the last value.
+&& returns the first false or falsey value or return the last value.
+
+**NULLISH COALESCING OPERATOR:
+
+?? <--- Nullish coalescing operator.
+
+- it is the same as || operator but it works with the concept of nullish values not falsey values which means it considers 0 and '' as if they are truthy values.
+
+- Nullish values are null and undefined that's it.
+
+**LOOPING OVER ARRAYS:
+
+for of loop:
+
+for (item of arrayName) { 
+                                     <---- loops over an array.                
+}
+
+arrayName.entries() 
+
+Object.entries():
+ - returns an array whose elements are arrays corresponding to the enumerable string-keyed property [key, value] pairs found directly upon object. The ordering of the properties is the same as that given by looping over the property values of the object manually.
+
+we can destructure items in the for loop.
+
+**OPTIONAL CHAINING:
+
+? <--- optional chaining operator.          
+
+restaurant?.openingHours?.thu?.open OR restaurant['openingHours']?.thu['open']
+
+- checks if the object exists and if only it exists further check the other properties. If it doesn't exist it ignores the rest and returns undefined
+
+We can do the same for functions:
+
+yo = restaurant['callResto']?.();
+
+optional chaining works on arrays too
+
+
+You iterate objects with Object.key(objectName) Object.value(objectName) or objext.entries(objectName)
+
+**SETS:
+
+const setName = new Set(iterableName);     <---- decalare a set.
+
+- A set cannot have duplicate values, it just deletes any duplicate value
+- sets don't have indexes or keys but it's still considered as an interable data structure.
+
+ setName.has(value) <---- Checks if the argument exists in the set or not and RETURNS a boolean.
+ setname.add(value) <---- Adds a new value to the set and returns the object (the set).
+ setName.clear(value) <-- Clears the set.
+
+
+**MAPS:
+
+const mapName = new Map([[key1, value1], [key2, value2], [key3, value3]]);  <---- declare a map.
+
+mapName.set('key', 'value'); <---- add a property to a map.
+mapName.get('key');          <---- returns the value associated with that key.
+mapName.delete('key');       <---- deletes the property with that key.
+mapName.Size                 <---- returns the size of mapName.
+- You can destructure maps.
+
+** STRINGS:
+
+'lslkkdfj'[3] -> 'd'
+'slklkdjf'.length
+'sjfldjfl'.indexOf('jf')
+'sljfdkjf'.lastIndexOf('jf')
+'hohoillk'.slice(a, b)
+'hohoillk'.toUpperCase()
+'hohoillk'.toLowerCase()
+'hohoillk'.trim()
+'hohoillk'.replace(oldStr, newStr)
+'hohoillk'.replaceALL(oldStr, newStr)
+'hohoillk'.startsWith(str)
+'hohoillk'.endsWith(str)
+'hohoillk'.split(splitterString) returns an array.
+['hello', 'this', 'will', 'become', 'joint', 'together'].joint(joinerString) 
+
+Javascript has first class functions trait, which means functions are values it's just another type of objects therefore can be used anywhere where a value can be also be used.
+
+** FUNCTION METHODS:
+
+fnName.call(objectName, property1, property2);  <------ calls the function and uses the objects specified as reference for the this keyword, so you basically explicitly define what this should be.
+
+fnName.apply(objectname, [property1, property2]) <----- same as the call method but takes the properties in an array.
+
+const fnName2 = fnName.bind(object, parameter1); <----- Returns a function with the this keyword pointed at objectName and we can preset parameters
+
+EXAMPLE:
+
+const multiplyThreeNums = function (num1, num2, num3) {
+  return num1 * num2 * num3;  
+}
+
+const multiplyBy6 = multiplyThreeNums.bind(null, 2, 3);
