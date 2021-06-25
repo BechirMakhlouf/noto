@@ -323,3 +323,42 @@ EXAMPLE:
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
 
 A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function’s scope from an inner function. In JavaScript, closures are created every time a function is created, at function creation time.
+
+
+**ARRAYS METHODS:
+
+arr.slice(a, b) <--- Similar to str.slice returns the portion sliced of the array, doesn't mutate the original array.
+    - use arr.slice() to copy the whole array (similar to [...arr]).
+    - arr.slice(-1) to copy the last item of the array. 
+
+arr.splice(a ,b) <-- Same as a slice() but it does remove the portion copied from the original array.
+    - You can use arr.splice(-1) to return the last item and remove it from the original array.
+
+arr.reverse() <-- returns a reversed version of the array and reverses the original array.
+
+arr.concat(arr2) <-- returns a new array containing the 2 arrays combined (similar to [...arr, ...arr1]) does not mutate the original array.
+
+arr.join(itemSeperator) <-- returns a string containing all the array items combined and sperated by the string given as an argument, does not mutate the original array.
+
+
+**FOREACH LOOP:
+
+    - The main difference between for of loop and forEach is that you can't use break or continue on the forEach loop.
+
+*forEach on arrays:
+
+    arr.forEach(function (value, i, arr)) {
+
+    });
+
+*forEach on maps:
+
+    mapName.forEach(function (value, key, map) {
+
+    })
+
+*forEach on sets:
+
+    setName.forEach(function (value, _, set) {
+
+    });
