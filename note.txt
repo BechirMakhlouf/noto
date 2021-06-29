@@ -269,7 +269,7 @@ const mapName = new Map([[key1, value1], [key2, value2], [key3, value3]]);  <---
 mapName.set('key', 'value'); <---- add a property to a map.
 mapName.get('key');          <---- returns the value associated with that key.
 mapName.delete('key');       <---- deletes the property with that key.
-mapName.Size                 <---- returns the size of mapName.
+mapName.size                 <---- returns the size of mapName.
 - You can destructure maps.
 
 ** STRINGS:
@@ -289,7 +289,7 @@ mapName.Size                 <---- returns the size of mapName.
 'hohoillk'.split(splitterString) returns an array.
 ['hello', 'this', 'will', 'become', 'joint', 'together'].joint(joinerString) 
 
-Javascript has first class functions trait, which means functions are values it's just another type of objects therefore can be used anywhere where a value can be also be used.
+- Javascript has first class functions trait, which means functions are values it's just another type of objects therefore can be used anywhere where a value can be also be used.
 
 ** FUNCTION METHODS:
 
@@ -343,22 +343,55 @@ arr.join(itemSeperator) <-- returns a string containing all the array items comb
 
 **FOREACH LOOP:
 
-    - The main difference between for of loop and forEach is that you can't use break or continue on the forEach loop.
+        - The main difference between for of loop and forEach is that you can't use break or continue on the forEach loop.
 
-*forEach on arrays:
+    *forEach on arrays:
 
-    arr.forEach(function (value, i, arr)) {
+        arr.forEach(function (value, i, arr)) {
 
-    });
+        });
 
-*forEach on maps:
+    *forEach on maps:
 
-    mapName.forEach(function (value, key, map) {
+        mapName.forEach(function (value, key, map) {
 
-    })
+        })
 
-*forEach on sets:
+    *forEach on sets:
 
-    setName.forEach(function (value, _, set) {
+        setName.forEach(function (value, _, set) {
 
-    });
+        });
+
+**IMPORTANT ARRAY FUNCTIONS:
+
+    *MAP:
+
+        const arr1 = arr.map(function (val, i) {
+            return value;
+        })
+
+        - map doesn't mutate the original array, it returns a new one with the changed values.
+
+    
+    *FILTER:
+
+        const arr1 = arr.filter(function (val, i) {
+            return value;         <-- if the value is falsey the array element gets filtered out
+        })
+
+        - filter doesn't mutate the original array.
+
+
+    *REDUCE:
+
+        const varName = arr.reduce(function (accumulator, currentArrElement, i, arr) {}, accumulatorInitValue);
+
+
+        - you can use reduce to add subtract find min or max of an array.
+
+    *FIND:
+
+        const varName = arr.find(function (val , i, arr) {return value})
+
+        - it does find and return the first array element with a value equal to the returned value.
